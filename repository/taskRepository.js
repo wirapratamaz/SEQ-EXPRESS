@@ -26,6 +26,7 @@ module.exports = {
           [Op.ne]: 'N/A'
         },
         status: { //filter task status tidak null dan active
+          [Op.all]: literal(['active', 'inactive']), //mencari data yang memiliki status semua status
           [Op.not]: null,
           [Op.is]: 'active'
         }

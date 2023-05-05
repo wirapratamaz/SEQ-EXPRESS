@@ -12,7 +12,43 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
+
+    static createNewTask(description, dueDate, status, completed) {
+      return Task.create({
+        description: description,
+        dueDate: dueDate,
+        status: status,
+        completed: completed
+      });
+    }
+
+    static findTaskById(id) {
+      return Task.findByPk(id);
+    }
+
+    static findAllTasks() {
+      return Task.findAll();
+    }
+
+    static updateTaskById(id, fields) {
+      return Task.update(fields, {
+        where: { id: id }
+      });
+    }
+
+    static deleteTaskById(id) {
+      return Task.destroy({
+        where: { id: id }
+      });
+    }
+
+    static findTasksByFilter(filter) {
+      return Task.findAll({
+        where: filter
+      });
+    }
   }
+
   Task.init({
     description: DataTypes.STRING,
     dueDate: DataTypes.DATE,
@@ -22,5 +58,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Task',
   });
+
   return Task;
 };
