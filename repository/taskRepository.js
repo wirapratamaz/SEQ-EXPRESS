@@ -16,11 +16,19 @@ module.exports = {
     nextWeek.setDate(today.getDate() + 7);
 
     return Task.findAll({
-      where: {
-        completed: false,
+      where: { //where filter hasil query
+        completed: false,//filter task
         dueDate: {
-          [Op.lt]: nextWeek,
+          [Op.lt]: nextWeek, // kurang dari minggu depan
+          [Op.gt]: today, //lebih dari hari ini
         },
+        description: { //filter task untuk deskripsi bukan 'N/A'
+          [Op.ne]: 'N/A'
+        },
+        status: { //filter task status tidak null dan active
+          [Op.not]: null,
+          [Op.is]: 'active'
+        }
       },
     });
   },
