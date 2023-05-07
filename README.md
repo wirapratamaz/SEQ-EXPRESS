@@ -15,3 +15,7 @@
 -Op.ne: operator not equal, digunakan untuk mencari nilai yang tidak sama dengan nilai yang diberikan. <br>
 -Op.not: operator not, digunakan untuk mencari nilai yang tidak null atau bukan nilai yang diberikan. <br>
 -Op.is: operator is, digunakan untuk mencari nilai yang sama dengan nilai yang diberikan.
+
+## Tambahan JOIN
+-Pada method getAllUsers(), terdapat penggunaan required: false pada attribute yang didefinisikan pada include options, sehingga left join dapat diimplementasikan.<br>
+-Pada method getAllOrders(), terdapat penggunaan required: false pada attribute yang didefinisikan pada include options, sehingga right join dapat diimplementasikan.<br>
