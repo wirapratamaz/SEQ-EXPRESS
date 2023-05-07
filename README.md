@@ -6,7 +6,7 @@
 
 ## Studi Kasus
 
--Implementasi query untuk mengambil data dengan kondisi tertentu menggunakan WHERE clauses (misalnya mengambil daftar tugas yang belum selesai dengan dueDate kurang dari 7 hari ke depan).
+-Implementasi query untuk mengambil data dengan kondisi tertentu menggunakan WHERE clauses (misalnya mengambil daftar tugas yang belum selesai dengan dueDate kurang dari 7 hari ke depan).<br>
 -Implementasi fungsi agregat dengan sequelize.fn dengan melakukan perhitungan jumlah total pengguna dan nilai rata-rata umur di tabel users. sequelize.col('*') untuk memilih semua kolom pada tabel. 
 
 ## Tambahan operation sequelize
