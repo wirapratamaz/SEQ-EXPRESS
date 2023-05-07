@@ -2,7 +2,15 @@ const { User, Order, sequelize } = require('../models/user');
 
 module.exports = {
   async getAllUsers() {
-    return User.findAll();
+    return User.findAll({
+      include: [
+        {
+          model: Order,
+          attributes: ['amount'], //attribut yg ingin ditampilkan
+          required: false, //set required menjadi false untuk left join
+        }
+      ]
+    });
   },
 
   async getUserById(id) {
@@ -40,7 +48,7 @@ module.exports = {
         include: [ //membuat join dengan User Model
           {
             model: Order,
-            attributes: [] // daftar atribut yang ingin dikecualikan
+            attributes: [] // daftar atribut
           }
         ],
         // mengelompokkan hasil query berdasarkan id pengguna.
@@ -53,5 +61,24 @@ module.exports = {
       console.log(error);
       throw new Error('Something went wrong')
     }
-  }
+  },
+
+  //*Implementasi right join table order dan user
+  async getAllOrders(){
+    try {
+      const result = await Order.findAll({
+        include: [
+          {
+            model: User,
+            attributes: ['name', 'email'], //attribut yg ingin ditampilkan
+            required: false, //set required menjadi false untuk right join
+          }
+        ]
+      });
+      return result;
+    } catch (error) {
+      console.log(error);
+      throw new Error('Something went wrong')
+    }
+  },
 };
