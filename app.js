@@ -35,7 +35,6 @@ app.use(morgan('combined', {
 // Use Routes
 app.use('/users', usersRoutes);
 app.use('/tasks', tasksRoutes);
-app.use('/emails', emailRoutes);
 
 // Start Server
 app.listen(3000, () => console.log('Server started on port 3000'));
