@@ -6,16 +6,10 @@
 
 ## Studi Kasus
 
--Implementasi query untuk mengambil data dengan kondisi tertentu menggunakan WHERE clauses (misalnya mengambil daftar tugas yang belum selesai dengan dueDate kurang dari 7 hari ke depan).<br>
--Implementasi fungsi agregat dengan sequelize.fn dengan melakukan perhitungan jumlah total pengguna dan nilai rata-rata umur di tabel users. sequelize.col('*') untuk memilih semua kolom pada tabel. 
-
-## Tambahan operation sequelize
--Op.lt: operator less than, digunakan untuk mencari nilai yang lebih kecil dari nilai yang diberikan. <br>
--Op.gt: operator greater than, digunakan untuk mencari nilai yang lebih besar dari nilai yang diberikan. <br>
--Op.ne: operator not equal, digunakan untuk mencari nilai yang tidak sama dengan nilai yang diberikan. <br>
--Op.not: operator not, digunakan untuk mencari nilai yang tidak null atau bukan nilai yang diberikan. <br>
--Op.is: operator is, digunakan untuk mencari nilai yang sama dengan nilai yang diberikan.
-
-## Tambahan JOIN
--Pada method getAllUsers(), terdapat penggunaan required: false pada attribute yang didefinisikan pada include options, sehingga left join dapat diimplementasikan.<br>
--Pada method getAllOrders(), terdapat penggunaan required: false pada attribute yang didefinisikan pada include options, sehingga right join dapat diimplementasikan.<br>
+-Implementasi Express Library 4.0 
+1. Body - Parser <br>
+Dapat menangani Cross-Origin Resource Sharing (CORS) pada server Express. Dengan menggunakan library ini, dapat mengontrol akses HTTP ke server dari domain lain. <br>
+2. Multer <br>
+Library yang digunakan untuk meng-handle upload file <br>
+3. Cors <br>
+Library yang digunakan untuk mem-parse request body pada aplikasi Express. Berguna untuk mengambil data dari form atau request POST <br>
