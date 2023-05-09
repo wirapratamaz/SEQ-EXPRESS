@@ -10,3 +10,5 @@ Dapat menangani Cross-Origin Resource Sharing (CORS) pada server Express. Dengan
 Library yang digunakan untuk meng-handle upload file <br>
 3. Cors <br>
 Library yang digunakan untuk mem-parse request body pada aplikasi Express. Berguna untuk mengambil data dari form atau request POST <br>
+4. Nodemailer <br>
+Library yang digunakan untuk mengirim email pada aplikasi Express.
