@@ -1,6 +1,3 @@
-
-## Model and Migration
-
 [Documentation](https://sequelize.org/docs/v6/getting-started/)
 
 
