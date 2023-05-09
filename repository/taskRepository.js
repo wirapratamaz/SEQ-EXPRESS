@@ -33,4 +33,16 @@ module.exports = {
       },
     });
   },
+
+  async getTaskGroupByCategory(){
+    return Task.findAll({
+      attributes: ['category', //menampilkan atribut yg dipakai
+      [sequelize.fn('COUNT', sequelize.col('id')), 'count']], //hitung task berdasarkan atribut
+      where: {
+        completed: false, // cari task belum selesai
+        status: 'active' // cari task status aktif
+      },
+      group: ['category'] // mengelompokkan hasil query berdasarkan atribut category
+    });
+  }
 };
