@@ -12,3 +12,7 @@ Library yang digunakan untuk meng-handle upload file <br>
 Library yang digunakan untuk mem-parse request body pada aplikasi Express. Berguna untuk mengambil data dari form atau request POST <br>
 4. Nodemailer <br>
 Library yang digunakan untuk mengirim email pada aplikasi Express.
+5. Morgan <br>
+library middleware untuk Node.js dan Express yang berguna untuk mencatat request HTTP ke server web
+6. JsonWebToken (JWT) <br>
+Menggunakan jsonwebtoken sebagai library untuk membuat dan memverifikasi token JWT. secretKey adalah kunci rahasia yang digunakan untuk menandatangani dan memverifikasi token
