@@ -4,13 +4,14 @@ const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 
 const taskController = require('../controllers/taskController');
+const { verifyTokenMiddleware } = require('../middlewares/authMiddleware');
 
-router.get('/', taskController.getAllTasks);
-router.get('/:id', taskController.getTaskById);
-router.get('/incomplete', taskController.getIncompleteTasks);
-router.get('/category', taskController.getTaskGroupByCategory);
-router.post('/', upload.single('attachment'), taskController.createTask);
-router.put('/:id', taskController.updateTask);
-router.delete('/:id', taskController.deleteTask);
+router.get('/', verifyTokenMiddleware, taskController.getAllTasks);
+router.get('/:id', verifyTokenMiddleware, taskController.getTaskById);
+router.get('/incomplete', verifyTokenMiddleware, taskController.getIncompleteTasks);
+router.get('/category', verifyTokenMiddleware, taskController.getTaskGroupByCategory);
+router.post('/', verifyTokenMiddleware, upload.single('attachment'), taskController.createTask);
+router.put('/:id', verifyTokenMiddleware, taskController.updateTask);
+router.delete('/:id', verifyTokenMiddleware, taskController.deleteTask);
 
 module.exports = router;
